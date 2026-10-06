@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Se importa cada etiqueta que use, se puede usar un import global -->
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+
+<!-->Ventana dividida por zonas.-->
+
+<?import javafx.scene.control.Accordion?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.saraFarina.bicicorunaia.MainController">
+    <!-- título -->
+    <top>
+        <Label text="BICI CORUÑA"/>
+    </top>
+
+    <!-- estaciones -->
+
+    <left>
+        <VBox spacing="10">
+
+            <!--VBox ordena los elementos verticalmente, colocando cada elemento debajo del anterior.-->
+
+            <Label text="ESTACIONES"/>
+
+            <Label text="María Pita"/>
+            <Label text="Riazor"/>
+            <Label text="Monte Alto"/>
+            <Label text="Cuatro Caminos"/>
+
+        </VBox>
+    </left>
+
+    <!--CHAT IA-->
+
+    <center>
+        <VBox spacing="10">
+            <Label text="CHAT"/>
+            <TextArea fx:id="chatArea" editable="false"/>
+            <HBox>
+                <TextField fx:id="mensajeField" promptText="Pregunta por las bicis"/>
+                <Button text="Enviar" onAction="#enviarMensaje"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
